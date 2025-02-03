@@ -1,0 +1,33 @@
+[versions]
+agp = "8.5.2"
+basicMultiplatformLib = "0.0.1"
+hotpreview = "0.1.4"
+kotlin = "2.1.0"
+android-minSdk = "24"
+android-compileSdk = "34"
+compose-multiplatform = "1.7.0"
+tablerIcons = "1.1.1"
+koinCore = "4.1.0-Beta5"
+androidx-activityCompose = "1.10.0"
+androidx-lifecycle = "2.8.4"
+kotlinx-coroutines = "1.10.1"
+
+[libraries]
+basic-multiplatform-lib = { module = "io.github.octestx:basic-multiplatform-lib", version.ref = "basicMultiplatformLib" }
+hotpreview = { module = "de.drick.compose:hotpreview", version.ref = "hotpreview" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koinCore" }
+tabler-icons = { module = "br.com.devsrsouza.compose.icons:tabler-icons", version.ref = "tablerIcons" }
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
+androidx-lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
+kotlinx-coroutines-swing = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
+
+[plugins]
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+vanniktech-mavenPublish = { id = "com.vanniktech.maven.publish", version = "0.29.0" }
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
+composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
