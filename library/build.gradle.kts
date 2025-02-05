@@ -13,7 +13,7 @@ plugins {
 }
 
 group = "io.github.octestx"
-version = "0.0.1.3"
+version = "0.0.2Test4"
 
 kotlin {
     jvm()
@@ -42,12 +42,19 @@ kotlin {
                 implementation(compose.components.uiToolingPreview)
                 implementation(libs.androidx.lifecycle.viewmodel)
                 implementation(libs.androidx.lifecycle.runtime.compose)
+                implementation(compose.animation)
                 // Koin Compose 支持（如需）
                 api(libs.koin.compose)
                 //https://github.com/DevSrSouza/compose-icons
                 //https://tabler.io/icons
                 api(libs.tabler.icons)
                 api(libs.hotpreview)
+                //https://github.com/cashapp/molecule/tree/trunk
+                implementation(libs.molecule.runtime)
+                //https://github.com/Tlaster/PreCompose
+                api(libs.precompose)
+                api(libs.precompose.koin)
+                api(libs.precompose.molecule)
             }
         }
         val commonTest by getting {
