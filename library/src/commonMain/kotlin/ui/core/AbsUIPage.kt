@@ -3,6 +3,7 @@ package ui.core
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 
@@ -35,9 +36,9 @@ abstract class AbsUIPage<P: Any?, S: AbsUIPage.AbsUIState<A>, A: AbsUIPage.AbsUI
     /**
      * In order to isolate the UI and data logic
      */
-    abstract class AbsUIModel<P: Any?, S: AbsUIState<A>, A: AbsUIAction> () {
+    abstract class AbsUIModel<P: Any?, S: AbsUIState<A>, A: AbsUIAction> (): ViewModel() {
         @Composable
-        internal abstract fun CreateState(params: P): S
+        abstract fun CreateState(params: P): S
         protected abstract fun actionExecute(params: P, action: A)
     }
 }
