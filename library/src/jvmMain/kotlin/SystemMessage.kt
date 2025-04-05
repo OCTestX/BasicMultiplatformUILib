@@ -1,7 +1,8 @@
-package io.github.kotlin.fibonacci.ui.utils
+package io.github.kotlin.fibonacci
 
 import androidx.compose.ui.window.Notification
 import androidx.compose.ui.window.TrayState
+import io.github.kotlin.fibonacci.ui.utils.getAbsoluteFromResPath
 import io.github.kotlin.fibonacci.utils.OS
 import io.klogging.noCoLogger
 import kotlinx.coroutines.CoroutineScope
