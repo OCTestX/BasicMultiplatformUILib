@@ -362,25 +362,25 @@ object Colors {
 
 
 
-        val schemes = listOf(
-            lightColorScheme(),
-            darkColorScheme(),
+        val schemes = mapOf(
+            "lightColorScheme" to lightColorScheme(),
+            "darkColorScheme" to darkColorScheme(),
 
-            blueColorScheme,
-            yellowColorScheme,
-            greenColorScheme,
-            pinkColorScheme,
-            redColorScheme,
-            tealColorScheme,
-            orangeColorScheme,
+            "blueColorScheme" to blueColorScheme,
+            "yellowColorScheme" to yellowColorScheme,
+            "greenColorScheme" to greenColorScheme,
+            "pinkColorScheme" to pinkColorScheme,
+            "redColorScheme" to redColorScheme,
+            "tealColorScheme" to tealColorScheme,
+            "orangeColorScheme" to orangeColorScheme,
 
-            blueDarkColorScheme,
-            yellowDarkColorScheme,
-            greenDarkColorScheme,
-            pinkDarkColorScheme,
-            redDarkColorScheme,
-            tealDarkColorScheme,
-            orangeDarkColorScheme,
+            "blueDarkColorScheme" to blueDarkColorScheme,
+            "yellowDarkColorScheme" to yellowDarkColorScheme,
+            "greenDarkColorScheme" to greenDarkColorScheme,
+            "pinkDarkColorScheme" to pinkDarkColorScheme,
+            "redDarkColorScheme" to redDarkColorScheme,
+            "tealDarkColorScheme" to tealDarkColorScheme,
+            "orangeDarkColorScheme" to orangeDarkColorScheme,
         )
     }
 }

@@ -11,8 +11,12 @@ import io.klogging.noCoLogger
 object ThemeRepository {
     private val ologger = noCoLogger<ThemeRepository>()
     private val _allTheme = mutableStateMapOf<String, M3Theme>(
-        "default" to M3Theme.default()
-    )
+        "default" to M3Theme.default(),
+    ).apply {
+        putAll(
+            eachDefaultColorToTheme()
+        )
+    }
     val allTheme: Map<String, M3Theme> = _allTheme
     private var _currentKey by mutableStateOf("default")
     val currentTheme by derivedStateOf {
@@ -47,13 +51,24 @@ object ThemeRepository {
         _currentKey = Settings().getString("${this.javaClass.name}-currentThemeKey", "default")
     }
 
+    private fun eachDefaultColorToTheme(): Map<String, M3Theme> {
+        val map = mutableMapOf<String, M3Theme>()
+        Colors.ThemeColorScheme.schemes.forEach {
+            map[it.key] = object : M3Theme() {
+                @Composable
+                override fun colorScheme(): ColorScheme = it.value
+            }
+        }
+        return map
+    }
+
     abstract class M3Theme() {
         @Composable
-        abstract fun colorScheme(): ColorScheme
+        open fun colorScheme(): ColorScheme = MaterialTheme.colorScheme
         @Composable
-        abstract fun shapes(): Shapes
+        open fun shapes(): Shapes = MaterialTheme.shapes
         @Composable
-        abstract fun typography(): Typography
+        open fun typography(): Typography = MaterialTheme.typography
         @Composable
         fun UI(content: @Composable () -> Unit) {
             MaterialTheme(
@@ -64,6 +79,7 @@ object ThemeRepository {
                 content()
             }
         }
+
         companion object{
             fun default() = object : M3Theme() {
                 @Composable
