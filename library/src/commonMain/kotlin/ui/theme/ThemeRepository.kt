@@ -28,7 +28,7 @@ object ThemeRepository {
      * 在这里注册你的主题
      * 如果要覆盖默认主题请把key设置为default
      */
-    fun bindTheme(key: String, theme: M3Theme) {
+    fun register(key: String, theme: M3Theme) {
         _allTheme[key] = theme
     }
     fun getTheme(key: String): M3Theme = allTheme[key]?: run {
@@ -39,10 +39,11 @@ object ThemeRepository {
     fun switchTheme(key: String): Result<Unit> {
         if (allTheme[key] == null) return Result.failure(ThemeNoFoundException())
         _currentKey = key
+        Settings().putString("${this.javaClass.name}-currentThemeKey", key)
         return Result.success(Unit)
     }
 
-    internal fun initLoad() {
+    init {
         _currentKey = Settings().getString("${this.javaClass.name}-currentThemeKey", "default")
     }
 

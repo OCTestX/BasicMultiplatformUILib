@@ -12,7 +12,6 @@ import io.github.kotlin.fibonacci.ui.BasicMUIWrapper
 import io.github.kotlin.fibonacci.ui.theme.ThemeRepository
 import io.klogging.noCoLogger
 import org.junit.Test
-import kotlin.test.assertEquals
 
 
 class SelectThemeTest {
@@ -32,8 +31,8 @@ class SelectThemeTest {
                         val p1 = ThemeRepository.M3Theme.create(colorScheme = darkColorScheme())
                         val p2 = ThemeRepository.M3Theme.create(colorScheme = darkColorScheme(primary = Color.Green))
                         Button(onClick = {
-                            ThemeRepository.bindTheme("PLUS", p1)
-                            ThemeRepository.bindTheme("P2", p2)
+                            ThemeRepository.register("PLUS", p1)
+                            ThemeRepository.register("P2", p2)
                         }) {
                             Text("ADD")
                         }
