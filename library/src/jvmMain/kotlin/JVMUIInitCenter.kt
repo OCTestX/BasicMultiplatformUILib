@@ -1,6 +1,5 @@
-package io.github.kotlin.fibonacci
-
 import androidx.compose.ui.window.TrayState
+import io.github.octestx.basic.multiplatform.ui.CommonUIInitCenter
 
 object JVMUIInitCenter {
     private var initialized = false

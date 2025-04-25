@@ -1,4 +1,4 @@
-package io.github.kotlin.fibonacci.ui.utils
+package io.github.octestx.basic.multiplatform.ui.ui.utils
 
 import io.github.octestx.library.generated.resources.Res
 import org.jetbrains.compose.resources.ExperimentalResourceApi

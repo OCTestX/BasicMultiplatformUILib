@@ -1,11 +1,9 @@
-package ui.core
+package io.github.octestx.basic.multiplatform.ui.ui.core
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 
 abstract class AbsUIPage<P: Any?, S: AbsUIPage.AbsUIState<A>, A: AbsUIPage.AbsUIAction>(private val model: AbsUIModel<P, S, A>) {
 //    protected val ioScope = CoroutineScope(Dispatchers.IO)

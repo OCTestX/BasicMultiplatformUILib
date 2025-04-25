@@ -1,4 +1,4 @@
-package io.github.kotlin.fibonacci.ui.utils
+package io.github.octestx.basic.multiplatform.ui.ui.utils
 
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
@@ -27,10 +27,9 @@ import androidx.compose.ui.platform.LocalAccessibilityManager
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import io.github.kotlin.fibonacci.ui.theme.info
-import io.github.kotlin.fibonacci.ui.theme.success
-import io.github.kotlin.fibonacci.ui.theme.warning
+import io.github.octestx.basic.multiplatform.ui.ui.theme.info
+import io.github.octestx.basic.multiplatform.ui.ui.theme.success
+import io.github.octestx.basic.multiplatform.ui.ui.theme.warning
 import kotlinx.coroutines.*
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.*

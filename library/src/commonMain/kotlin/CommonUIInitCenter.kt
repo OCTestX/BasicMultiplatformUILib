@@ -1,7 +1,5 @@
-package io.github.kotlin.fibonacci
+package io.github.octestx.basic.multiplatform.ui
 
-import ca.gosyer.appdirs.AppDirs
-import io.github.kotlin.fibonacci.logger.OLogger
 import org.koin.core.context.GlobalContext
 import org.koin.dsl.module
 

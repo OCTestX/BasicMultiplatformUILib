@@ -1,4 +1,4 @@
-package io.github.kotlin.fibonacci.ui.theme
+package io.github.octestx.basic.multiplatform.ui.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.ColorScheme

@@ -1,4 +1,4 @@
-package io.github.kotlin.fibonacci.ui.theme
+package io.github.octestx.basic.multiplatform.ui.ui.theme
 
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
@@ -57,6 +57,11 @@ object ThemeRepository {
             map[it.key] = object : M3Theme() {
                 @Composable
                 override fun colorScheme(): ColorScheme = it.value
+
+                @Composable
+                override fun typography(): Typography {
+                    return Typography()
+                }
             }
         }
         return map
@@ -94,7 +99,7 @@ object ThemeRepository {
                 colorScheme: ColorScheme = MaterialTheme.colorScheme,
                 shapes: Shapes = MaterialTheme.shapes,
                 typography: Typography = MaterialTheme.typography
-            ) = object :M3Theme() {
+            ) = object : M3Theme() {
                 @Composable
                 override fun colorScheme(): ColorScheme = colorScheme
                 @Composable

@@ -1,9 +1,7 @@
-package io.github.kotlin.fibonacci
-
 import androidx.compose.ui.window.Notification
 import androidx.compose.ui.window.TrayState
-import io.github.kotlin.fibonacci.ui.utils.getAbsoluteFromResPath
-import io.github.kotlin.fibonacci.utils.OS
+import io.github.octestx.basic.multiplatform.common.utils.OS
+import io.github.octestx.basic.multiplatform.ui.ui.utils.getAbsoluteFromResPath
 import io.klogging.noCoLogger
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -41,7 +39,7 @@ object SystemMessage {
         iconResPath: String?
     ) {
         try {
-            when(OS.getCurrentOS()) {
+            when (OS.currentOS) {
                 OS.OperatingSystem.WIN -> tryWindowsToastNotification(trayState, notification.title, notification.message)
                 OS.OperatingSystem.LINUX -> tryLinuxNativeNotification(notification.title, notification.message, iconResPath)
                 else -> throw NotificationFailedException("Unsupported platform")

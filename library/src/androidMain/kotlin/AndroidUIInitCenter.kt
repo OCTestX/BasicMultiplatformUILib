@@ -1,6 +1,5 @@
-package io.github.kotlin.fibonacci
+package io.github.octestx.basic.multiplatform.ui
 
-import android.app.Application
 import crash.CrashHandler
 
 object AndroidUIInitCenter {

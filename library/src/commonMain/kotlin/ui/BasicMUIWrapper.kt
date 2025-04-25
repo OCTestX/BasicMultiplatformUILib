@@ -1,11 +1,10 @@
-package io.github.kotlin.fibonacci.ui
+package io.github.octestx.basic.multiplatform.ui.ui
 
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
-import io.github.kotlin.fibonacci.ui.theme.ThemeRepository
-import io.github.kotlin.fibonacci.ui.utils.ToastUI
-import io.github.kotlin.fibonacci.ui.utils.ToastUIState
+import io.github.octestx.basic.multiplatform.ui.ui.theme.ThemeRepository
+import io.github.octestx.basic.multiplatform.ui.ui.utils.ToastUI
+import io.github.octestx.basic.multiplatform.ui.ui.utils.ToastUIState
 
 lateinit var toast: ToastUIState private set
 
