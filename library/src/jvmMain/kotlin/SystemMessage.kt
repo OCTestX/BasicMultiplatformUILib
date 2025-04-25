@@ -1,3 +1,5 @@
+package io.github.octestx.basic.multiplatform.ui
+
 import androidx.compose.ui.window.Notification
 import androidx.compose.ui.window.TrayState
 import io.github.octestx.basic.multiplatform.common.utils.OS
