@@ -1,4 +1,4 @@
-package crash
+package io.github.octestx.basic.multiplatform.ui.crash
 
 import android.app.Activity
 import android.content.ClipData
@@ -18,7 +18,7 @@ import android.widget.HorizontalScrollView
 import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
-import io.github.kotlin.fibonacci.applicationContext
+import io.github.octestx.basic.multiplatform.common.applicationContext
 import io.klogging.noCoLogger
 import kotlinx.io.IOException
 import java.io.File
