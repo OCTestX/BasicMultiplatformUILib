@@ -1,6 +1,6 @@
 package io.github.octestx.basic.multiplatform.ui
 
-import crash.CrashHandler
+import io.github.octestx.basic.multiplatform.ui.crash.CrashHandler
 
 object AndroidUIInitCenter {
     private var initialized = false
