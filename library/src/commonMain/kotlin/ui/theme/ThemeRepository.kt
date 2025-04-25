@@ -48,7 +48,7 @@ object ThemeRepository {
     }
 
     init {
-        _currentKey = Settings().getString("${this.javaClass.name}-currentThemeKey", "default")
+        _currentKey = Settings().getString("BasicMultiplatformUILib.ThemeRepository-currentThemeKey", "default")
     }
 
     private fun eachDefaultColorToTheme(): Map<String, M3Theme> {
