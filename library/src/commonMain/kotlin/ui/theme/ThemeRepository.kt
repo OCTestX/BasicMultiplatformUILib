@@ -43,7 +43,7 @@ object ThemeRepository {
     fun switchTheme(key: String): Result<Unit> {
         if (allTheme[key] == null) return Result.failure(ThemeNoFoundException())
         _currentKey = key
-        Settings().putString("${this.javaClass.name}-currentThemeKey", key)
+        Settings().putString("BasicMultiplatformUILib.ThemeRepository-currentThemeKey-currentThemeKey", key)
         return Result.success(Unit)
     }
 
