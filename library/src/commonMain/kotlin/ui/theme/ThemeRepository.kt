@@ -10,7 +10,7 @@ import io.klogging.noCoLogger
 
 object ThemeRepository {
     private val ologger = noCoLogger<ThemeRepository>()
-    private val _allTheme = mutableStateMapOf<String, M3Theme>(
+    private val _allTheme = mutableStateMapOf(
         "default" to M3Theme.default(),
     ).apply {
         putAll(
@@ -18,7 +18,12 @@ object ThemeRepository {
         )
     }
     val allTheme: Map<String, M3Theme> = _allTheme
-    private var _currentKey by mutableStateOf("default")
+    private var _currentKey by mutableStateOf(
+        Settings().getString(
+            "BasicMultiplatformUILib.ThemeRepository-currentThemeKey",
+            "default"
+        )
+    )
     val currentTheme by derivedStateOf {
         run {
             val key = _currentKey
@@ -45,10 +50,6 @@ object ThemeRepository {
         _currentKey = key
         Settings().putString("BasicMultiplatformUILib.ThemeRepository-currentThemeKey-currentThemeKey", key)
         return Result.success(Unit)
-    }
-
-    init {
-        _currentKey = Settings().getString("BasicMultiplatformUILib.ThemeRepository-currentThemeKey", "default")
     }
 
     private fun eachDefaultColorToTheme(): Map<String, M3Theme> {
