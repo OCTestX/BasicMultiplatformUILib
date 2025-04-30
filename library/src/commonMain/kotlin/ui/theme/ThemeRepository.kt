@@ -12,11 +12,7 @@ object ThemeRepository {
     private val ologger = noCoLogger<ThemeRepository>()
     private val _allTheme = mutableStateMapOf(
         "default" to M3Theme.default(),
-    ).apply {
-        putAll(
-            eachDefaultColorToTheme()
-        )
-    }
+    )
     val allTheme: Map<String, M3Theme> = _allTheme
     private var _currentKey by mutableStateOf(
         Settings().getString(
@@ -52,37 +48,26 @@ object ThemeRepository {
         return Result.success(Unit)
     }
 
-    private fun eachDefaultColorToTheme(): Map<String, M3Theme> {
-        val map = mutableMapOf<String, M3Theme>()
-        Colors.ThemeColorScheme.schemes.forEach {
-            map[it.key] = object : M3Theme() {
-                @Composable
-                override fun colorScheme(): ColorScheme = it.value
-
-                @Composable
-                override fun typography(): Typography {
-                    return Typography()
-                }
-            }
-        }
-        return map
-    }
-
     abstract class M3Theme() {
         @Composable
-        open fun colorScheme(): ColorScheme = MaterialTheme.colorScheme
+        abstract fun colorScheme(): ColorScheme
         @Composable
-        open fun shapes(): Shapes = MaterialTheme.shapes
+        abstract fun shapes(): Shapes
         @Composable
-        open fun typography(): Typography = MaterialTheme.typography
+        abstract fun typography(): Typography
+
+        @Composable
+        open fun ProvideGlobalValues(): Array<ProvidedValue<*>> = arrayOf()
         @Composable
         fun UI(content: @Composable () -> Unit) {
-            MaterialTheme(
-                colorScheme = colorScheme(),
-                shapes = shapes(),
-                typography = typography()
-            ) {
-                content()
+            CompositionLocalProvider(*ProvideGlobalValues()) {
+                MaterialTheme(
+                    colorScheme = colorScheme(),
+                    shapes = shapes(),
+                    typography = typography()
+                ) {
+                    content()
+                }
             }
         }
 
