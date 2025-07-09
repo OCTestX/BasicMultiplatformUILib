@@ -1,9 +1,9 @@
 [versions]
 agp = "8.5.2"
-basicMultiplatformLib = "0.1.0"
+basicMultiplatformLib = "0.1.4-DownVer"
 hotpreview = "0.1.4"
 kotlin = "2.1.0"
-android-minSdk = "28"
+android-minSdk = "23"
 android-compileSdk = "34"
 compose-multiplatform = "1.7.0"
 tablerIcons = "1.1.1"
