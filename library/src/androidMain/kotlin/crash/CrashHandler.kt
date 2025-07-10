@@ -133,7 +133,9 @@ internal object CrashHandler : Thread.UncaughtExceptionHandler {
             val packageInfo: PackageInfo =
                 applicationContext.packageManager.getPackageInfo(applicationContext.packageName, 0)
             versionName = packageInfo.versionName
-            versionCode = packageInfo.longVersionCode
+            versionCode = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                packageInfo.longVersionCode
+            } else packageInfo.versionCode.toLong()
         } catch (ignored: PackageManager.NameNotFoundException) {
         }
         var fullStackTrace: String

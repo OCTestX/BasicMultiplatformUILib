@@ -13,7 +13,7 @@ plugins {
 }
 
 group = "io.github.octestx"
-version = "0.1.4.1-DownVer"
+version = "0.1.4.1-DownVer1"
 
 kotlin {
     jvm()
