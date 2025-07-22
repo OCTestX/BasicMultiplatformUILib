@@ -6,6 +6,7 @@ import io.github.octestx.basic.multiplatform.ui.ui.global.GlobalVarProvider
 import io.github.octestx.basic.multiplatform.ui.ui.theme.ThemeRepository
 import io.github.octestx.basic.multiplatform.ui.ui.utils.ToastUI
 import io.github.octestx.basic.multiplatform.ui.ui.utils.ToastUIState
+import moe.tlaster.precompose.PreComposeApp
 
 lateinit var toast: ToastUIState private set
 
@@ -13,9 +14,11 @@ lateinit var toast: ToastUIState private set
 fun BasicMUIWrapper(content: @Composable () -> Unit) {
     GlobalVarProvider {
         ThemeRepository.currentTheme.second.UI() {
-            toast = remember { ToastUIState() }
-            content()
-            ToastUI(toast)
+            PreComposeApp {
+                toast = remember { ToastUIState() }
+                content()
+                ToastUI(toast)
+            }
         }
     }
 }
