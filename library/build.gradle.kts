@@ -13,7 +13,7 @@ plugins {
 }
 
 group = "io.github.octestx"
-version = "0.1.5.1"
+version = "0.1.5.2"
 
 kotlin {
     jvm()
@@ -55,6 +55,11 @@ kotlin {
                 api(libs.precompose)
                 api(libs.precompose.koin)
                 api(libs.precompose.molecule)
+
+                implementation("io.github.vinceglb:filekit-coil:0.10.0-beta01")
+                implementation("io.github.vinceglb:filekit-core:0.10.0-beta01")
+                implementation("io.github.vinceglb:filekit-dialogs:0.10.0-beta01")
+                implementation("io.github.vinceglb:filekit-dialogs-compose:0.10.0-beta01")
             }
         }
         val commonTest by getting {
