@@ -17,6 +17,10 @@ version = "0.2"
 
 kotlin {
     jvm()
+
+
+
+
     androidTarget {
         publishLibraryVariants("release")
         @OptIn(ExperimentalKotlinGradlePluginApi::class)
