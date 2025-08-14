@@ -1,0 +1,13 @@
+<!-- 库模块的 AndroidManifest.xml -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <activity
+                android:name="io.github.octestx.basic.multiplatform.ui.crash.CrashHandler$CrashActivity"
+                android:exported="true"
+                android:theme="@style/Theme.AppCompat">
+            <!-- 可以在这里添加intent-filter等配置 -->
+        </activity>
+    </application>
+
+</manifest>
